@@ -2,7 +2,7 @@ package ru.netology.stats;
 
 public class StatisticsService {
 
-    public int SumAllMonth(int[] sales) {
+    public int sumAllMonth(int[] sales) {
         int sum = 0;
         for (int purchase : sales) {
 
@@ -12,19 +12,17 @@ public class StatisticsService {
         return sum;
     }
 
-    public int AverageAmount(int[] sales) {
-        int sum = 0;
-        int month = 0;
-        for (int purchase : sales) {
-            month = month + 1;
+    public int averageAmount(int[] sales) {
+        int sum = sumAllMonth(sales);
+        int month = 12;
+        int amount = 0;
 
-            sum += purchase;
+            amount = sum / month;
 
-        }
-        return sum / month;
+        return amount;
     }
 
-    public static int MaxSalesMonth(int[] sales) {
+    public static int maxSalesMonth(int[] sales) {
         int max = sales[0];
         int maxMonth = 0;
         int month = 0;
@@ -40,7 +38,7 @@ public class StatisticsService {
         return month;
     }
 
-    public static int MinSalesMonth(int[] sales) {
+    public static int minSalesMonth(int[] sales) {
         int max = sales[0];
         int minMonth = 0;
         int month = 0;
@@ -57,45 +55,31 @@ public class StatisticsService {
     }
 
 
-    public int MonthDownMid(int[] sales) {
-        int sum = 0;
-        int month = 0;
-        for (int purchase : sales) {
-            month = month + 1;
+    public int monthDownMid(int[] sales) {
 
-            sum += purchase;
-
-        }
-        int amount = sum / month;
-        int MonthDown = 0;
+        int amount = averageAmount(sales);
+        int monthDown = 0;
         for (int downMid : sales) {
 
             if (amount > downMid) {
-                MonthDown = MonthDown + 1;
+                monthDown = monthDown + 1;
 
             }
         }
-        return MonthDown;
+        return monthDown;
     }
 
-    public int MonthUpMid(int[] sales) {
-        int sum = 0;
-        int month = 0;
-        for (int purchase : sales) {
-            month = month + 1;
+    public int monthUpMid(int[] sales) {
 
-            sum += purchase;
-
-        }
-        int amount = sum / month;
-        int MonthUp = 0;
+        int amount = averageAmount(sales);
+        int monthUp = 0;
         for (int downMid : sales) {
 
             if (amount <= downMid) {
-                MonthUp = MonthUp + 1;
+                monthUp = monthUp + 1;
             }
         }
-        return MonthUp;
+        return monthUp;
     }
 }
 

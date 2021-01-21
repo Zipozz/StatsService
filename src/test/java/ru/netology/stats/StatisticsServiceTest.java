@@ -7,10 +7,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class StatisticsServiceTest {
 
     @Test
-    void SumAllMonth() {
+    void sumAllMonth() {
         StatisticsService statsService = new StatisticsService();
         int[] sales = {8,15,13,15,17,20,19,20,7,14,14,18};
-        int actual = statsService.SumAllMonth(sales);
+        int actual = statsService.sumAllMonth(sales);
         int expected = 180;
         assertEquals(expected,actual);
 
@@ -18,46 +18,46 @@ class StatisticsServiceTest {
     }
 
     @Test
-    void AverageAmount() {
+    void averageAmount() {
         StatisticsService statsService = new StatisticsService();
         int[] sales = {8,15,13,15,17,20,19,20,7,14,14,18};
-        int actual = statsService.AverageAmount(sales);
+        int actual = statsService.averageAmount(sales);
         int expected = 15;
         assertEquals(expected,actual);
     }
 
     @Test
-    void MaxSalesMonth() {
+    void maxSalesMonth() {
         StatisticsService statsService = new StatisticsService();
         int[] sales = {8,15,13,15,17,20,19,20,7,14,14,18};
-        int actual = statsService.MaxSalesMonth(sales);
+        int actual = statsService.maxSalesMonth(sales);
         int expected = 8;
         assertEquals(expected,actual);
     }
 
     @Test
-    void MinSalesMonth() {
+    void minSalesMonth() {
         StatisticsService statsService = new StatisticsService();
         int[] sales = {8,15,13,15,17,20,19,20,7,14,14,18};
-        int actual = statsService.MinSalesMonth(sales);
+        int actual = statsService.minSalesMonth(sales);
         int expected = 9;
         assertEquals(expected,actual);
     }
 
     @Test
-    void MonthDownMid() {
+    void monthDownMid() {
         StatisticsService statsService = new StatisticsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = statsService.MonthDownMid(sales);
+        int actual = statsService.monthDownMid(sales);
         int expected = 5;
         assertEquals(expected, actual);
     }
 
     @Test
-    void MonthUpMid() {
+    void monthUpMid() {
         StatisticsService statsService = new StatisticsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-        int actual = statsService.MonthUpMid(sales);
+        int actual = statsService.monthUpMid(sales);
         int expected = 7;
         assertEquals(expected, actual);
     }
