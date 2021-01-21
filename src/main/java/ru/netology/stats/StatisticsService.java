@@ -14,7 +14,7 @@ public class StatisticsService {
 
     public int averageAmount(int[] sales) {
         int sum = sumAllMonth(sales);
-        int month = 12;
+        int month = sales.length;
         int amount = 0;
 
             amount = sum / month;
